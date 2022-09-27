@@ -9,10 +9,8 @@
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Testing](#testing)
 - [Contact](#contact)
 - [Acknowledgments](#acknowledgments)
-- [Reflections](#reflections)
 
 ---
 
@@ -67,14 +65,15 @@ You can find the project [here](https://github.com/emilyjmiles/travel-tracker.gi
 <!-- USAGE EXAMPLES -->
 ## Usage
 * The program displays a user's travel data through text and images and allows them to submit a form with a new travel request.
+<p align="center"><img src="https://media.giphy.com/media/38S1cQxdja8wV8Ozz4/giphy.gif" width=75%></p>
+<p align="center"><img src="https://media.giphy.com/media/wfpUcXC2JugXoUhc5S/giphy.gif" width=75%></p>
+<p align="center"><img src="https://media.giphy.com/media/19DjIYdLnpYl5NlPZb/giphy.gif" width=75%></p>
 
-New feature ideas: 
-- [] Make mobile responsive
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Testing
-We utilized TDD to create our project using [Mocha](https://mochajs.org/) & [Chai](https://www.chaijs.com/).
+Future Iterations: 
+- [ ] Make mobile responsive
+- [ ] Incorporate MicroModal
+- [ ] Build out an Agent Portal for trip approvals
+- [ ] DRY up innerHTML functions to be dynamic
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,10 +92,6 @@ The following resources helped us build this project:
 [![MDN Docs][MDN-shield]][MDN]
 [![Turing School](https://img.shields.io/badge/Turing_School-030303?style=for-the-badge)](https://turing.edu/)
 [![Chai Assertion Library](https://img.shields.io/badge/chai-A30701?style=for-the-badge&logo=chai&logoColor=white)](https://www.chaijs.com/api/bdd/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Reflections
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
