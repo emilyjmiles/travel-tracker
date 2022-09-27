@@ -27,23 +27,15 @@ header {
   margin: 1.5%;
 }
 
-.welcome-traveler {
-  display: flex;
-  align-items: center;
-  font-size: 1.75rem;
-  margin: 1.5%;
-
-}
-
-.account-login-button {
+.login-form-button {
   background-color: transparent;
-  border: none;
+  border-radius: 10px;
   font-family: 'Acme';
   font-size: 1.25rem;
   margin: 1.5%;
 }
 
-.account-login-button:hover {
+.login-form-button:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 0 0.75rem #000dff);
   cursor: pointer;
@@ -61,6 +53,54 @@ header {
   margin-bottom: 10%;
   margin-left: 30%;
   padding: 5%;;
+}
+
+.account-login-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffffd9;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-top: 10%;
+  margin-right: 30%;
+  margin-bottom: 10%;
+  margin-left: 30%;
+  padding: 5%;;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+}
+
+.login-submit-button {
+  background-color: transparent;
+  border-radius: 10px;
+  font-family: 'Acme';
+  font-size: 1rem;
+  margin: 2.5%;
+  padding: 1%;
+}
+
+.login-submit-button:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 0.75rem #000dff);
+  cursor: pointer;
+}
+
+.traveler-acount-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1px;
+  margin: 1.5%;
+}
+
+.welcome-traveler {
+  font-size: 1.75rem;
 }
 
 .traveler-data-overview {
@@ -184,6 +224,12 @@ header {
 
 .trip-estimate {
   font-size: 2rem;
+}
+
+.login-error,
+.error-message {
+  color: #000dff;
+  font-size: 1rem;
 }
 
 .hidden {
