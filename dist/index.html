@@ -13,14 +13,30 @@
   <body>
     <header class="travel-tracker-header" id="travelTrackerHeader">
       <h1 class="header-title" id="headerTitle">Travel Tracker</h1>
-      <h2 class="welcome-traveler" id="welcomeTraveler"></h2>
-      <button type="button" class="account-login-button hidden"
-        id="accountLoginButton">Account Login</button>
+      <button type="button" class="login-form-button"
+      id="loginFormButton">Account Login</button>
+      <div class="traveler-acount-info">
+        <h2 class="welcome-traveler" id="welcomeTraveler"></h2>
+        <button type="button" class="account-logout"
+        id="accountLogout">Account Logout</button>
+      </div>
     </header>
-    <section class="adventure-welcome hidden" id="adventureWelcome">
-      <h2 class="homepage-welcome" id="homepageWelcome">Are you ready for your
-        next adventure?</h2>
-      <!-- login inputs to replace welcome message on click of account login button -->
+    <section class="adventure-welcome" id="adventureWelcome">
+      <h2 class="homepage-welcome" id="homepageWelcome">Are you ready for your next adventure?</h2>
+    </section>
+    <section class="account-login-form" id="accountLoginForm">
+      <form class="login-form">
+        <div>
+          <label>Username:</label>
+          <input type="text" class="username-input" id="usernameInput" required>
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type="password" class="password-input"id="passwordInput" required>
+        </div>
+      </form>
+      <p class="login-error" id="loginError"></p>
+      <button class="login-submit-button">Login to start your new adventure!</button>
     </section>
     <section class="traveler-data-overview" id="travelerDataOverview">
       <section class="trips-container" id="tripsContainer">
@@ -62,7 +78,7 @@
             </div>
             <div class="form-input">
               <label>Departure Date: </label>
-              <input type="date" aria-label="calendar date input" min=""
+              <input type="date" aria-label="calendar date input" min="2022/09/27"
                 class="input calendar-input" id="calendarInput" required>
             </div>
             <div class="form-input">

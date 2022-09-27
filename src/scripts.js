@@ -19,6 +19,7 @@ const upcomingTrips = document.querySelector('.upcoming-trips-container');
 const pendingTrips = document.querySelector('.pending-trips-container');
 const spentBreakdown = document.querySelector('.traveler-spent-breakdown');
 const locationOptions = document.querySelector('.location-options');
+
 const tripEstimate = document.querySelector('.trip-estimate')
 const allInputs = document.querySelectorAll('.input')
 const errorMessage = document.querySelector('.error-message')
@@ -32,6 +33,21 @@ let calendarInput = document.getElementById('calendarInput');
 let durationInput = document.getElementById('tripLength');
 let numberTravelersInput = document.getElementById('numberTravelers');
 
+// Login Page Query Selector
+const adventureWelcome = document.querySelector('.adventure-welcome');
+const accountLoginForm = document.querySelector('.account-login-form');
+const userDataOverview = document.querySelector('.traveler-data-overview');
+const travelerInfo = document.querySelector('.traveler-acount-info')
+
+const loginFormButton = document.querySelector('.login-form-button');
+const submitLoginButton = document.querySelector('.login-submit-button');
+const logoutButton = document.querySelector('.account-logout');
+
+const loginError = document.querySelector('.login-error')
+
+let usernameInput = document.getElementById('usernameInput');
+let passwordInput = document.getElementById('passwordInput');
+
 // Global Variables
 let travelerData;
 let tripData;
@@ -42,22 +58,25 @@ let tripRepo;
 function fetchAllData() {
   Promise.all([fetchData('travelers'),fetchData('trips'),fetchData('destinations')])
     .then((data) => {
-      travelerData = data[0].travelers;
+      travelerData = data[0].travelers
       tripData = data[1].trips.map(trip => new Trip(trip));
       destinationData = data[2].destinations.map(destination =>  new Destination(destination));
 
-      currentTraveler = new Traveler(travelerData[Math.floor(Math.random() * travelerData.length)]);
+      displayTravelerDashboard()
       tripRepo = new TripRepository(currentTraveler, tripData);
-      
-      generatePageLoad();
+
+      generatePageLoad()
   });
 };
 
 // Event Listeners
-window.addEventListener('load', fetchAllData);
+window.addEventListener('load', showLoginPage);
+loginFormButton.addEventListener('click', showLoginForm)
+submitLoginButton.addEventListener('click', fetchAllData)
 displayEstimate.addEventListener('click', displayTripEstimate);
 clearForm.addEventListener('click', resetTripForm);
 bookTrip.addEventListener('click', bookNewTrip);
+logoutButton.addEventListener('click', logoutOfAccount)
 
 // Helper Functions
 function getTravelCost(cost, multiplier) {
@@ -72,6 +91,47 @@ function getTotalTripCost(singleDestination, singleTrip) {
 
   return total.toFixed(2);
 };
+
+function hideElements(elements) {
+  elements.forEach(element => element.classList.add('hidden'));
+};
+
+function showElements(elements) {
+  elements.forEach(element => element.classList.remove('hidden'));
+};
+
+// DOM Functions for User Login
+function showLoginPage() {
+  showElements([loginFormButton, adventureWelcome])
+  hideElements([accountLoginForm, submitLoginButton, welcomeTraveler, userDataOverview, travelerInfo])
+}
+
+function showLoginForm() {
+  showElements([accountLoginForm, submitLoginButton])
+  hideElements([loginFormButton, adventureWelcome, welcomeTraveler, userDataOverview, travelerInfo])
+}
+
+function displayTravelerDashboard() {
+  if (usernameInput.value === '' || passwordInput.value === '' || passwordInput.value !== 'travel' || !usernameInput.value.includes('traveler') || !usernameInput.value.length === 10) {
+    loginError.innerHTML = 'Please enter a valid username and password';
+
+  } else if (usernameInput.value.length === 10 && usernameInput.value.includes('traveler') && parseInt(usernameInput.value.substring(8,10))<= 50 && passwordInput.value === 'travel') {
+
+    loginError.innerHTML = '';
+
+    const traveler = travelerData.find(traveler => traveler.id === parseInt(usernameInput.value.substring(8,10)));
+    
+    currentTraveler = new Traveler(traveler);
+    showElements([welcomeTraveler, userDataOverview, travelerInfo]);
+    hideElements([accountLoginForm, submitLoginButton, accountLoginForm, submitLoginButton]);
+  };
+};
+
+function logoutOfAccount() {
+  currentTraveler = '';
+  showElements([loginFormButton, adventureWelcome])
+  hideElements([accountLoginForm, submitLoginButton, welcomeTraveler, userDataOverview, travelerInfo])
+}
 
 // DOM Functions
 function generatePageLoad() {
@@ -241,4 +301,6 @@ function bookNewTrip(event) {
   allInputs.forEach(input => input.value = '');
   tripEstimate.innerHTML = '';
 };
+
+
 
