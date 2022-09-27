@@ -17,7 +17,7 @@
 ---
 
 ## About The Project
-
+Travel Tracker is a travel tracking application. This application shows a user their past, upcoming, and pending travel plans based on their login information. When a user logs in, they are brought to their dashboard which displays a card for each trip with that trips details. A user will also see their cost breakdown for what they have spent for the current year to date. If a user would like to book a new trip, a form is available for them to submit a new trip request. Once that request is submited, the new trip will show up in their "Pending Trips" section while it waits for approval.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,7 +66,7 @@ You can find the project [here](https://github.com/emilyjmiles/travel-tracker.gi
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-* The program displays user's travel data through text and images and allows them to submit a new travel request.
+* The program displays a user's travel data through text and images and allows them to submit a form with a new travel request.
 
 New feature ideas: 
 - [] Make mobile responsive
