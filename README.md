@@ -1,99 +1,110 @@
-# Webpack Starter Kit
+<a name="readme-top"></a>
 
-## Clone This Repo
+# Travel Tracker
 
-That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:
-
-1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
-1. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
-1. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
-1. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
-
-Now try to commit something (just add a line in the README) and push it up to your new repo. If everything is setup correctly, you should see the changes on GitHub.
-
-## Setup
-
-After one person has gone through the steps of cloning down this repo and editing the remote, everyone should clone down the repo.
-
-Then install the library dependencies. Run:
-
-```bash
-npm install
-```
-
-To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:8080/` and you should see a page with the Turing logo image and a beautiful gradient background. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
-
-## Where to Add Your Code
-
-### JavaScript
-
-You have to be very intentional with where you add your feature code. This repo uses a tool called [webpack](https://webpack.js.org/) to combine many JavaScript files into one big file. Webpack enables you to have many, separate JavaScript files to keep your code organized and readable. Webpack expects all of your code files to be in a specific place, or else it doesn't know how to combine them all behind the scenes.
-
-**Create all of your feature code files in the `src` directory.**
-
-Since code is separated into multiple files, you need to use the `import` and `export` syntax to share code across file.
-
-Here is a video that walks through some information about [import and export](https://www.youtube.com/watch?v=_3oSWwapPKQ). There are a lot of resources out there about `import` and `export`, and resources will sometimes call them `ES6 modules`. It's something you will see in React and beyond.
-
-### HTML
-
-Add the HTML you need in the `index.html` file in the `./dist` directory. There is some boilerplate HTML that exists from the start that you can modify.
-
-### Images
-
-Add your image files in the `src/images` directory. Similar to CSS files, you need to `import` image files in the JavaScript entry file (`scripts.js`). Then go into the HTML and add an `img` element with the `src` attribute pointing to the `images` directory. There is an example in the `index.html` file for you to see.
-
-## How to View Your Code in Action
-
-In the terminal, run:
-
-```bash
-npm start
-```
-
-You will see a bunch of lines output to your terminal. One of those lines will be something like:
-
-```bash
-Project is running at http://localhost:8080/
-```
-
-Go to `http://localhost:8080/` in your browser to view your code running in the browser.
+## Table of Contents
+- [About The Project](#about-the-project)
+- [Project Spec](#project-spec)
+- [Technologies](#technologies)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contact](#contact)
+- [Acknowledgments](#acknowledgments)
+- [Reflections](#reflections)
 
 ---
 
-## Test Files Organization
+## About The Project
 
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
 
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `box-test.js`.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Running Your Tests
+## Project Spec
+Travel Tracker is an application built during my time at the [Turing School of Software and Design](https://turing.edu/) front-end engineering program. The goals of this [project](https://frontend.turing.edu/projects/travel-tracker.html) were to:
 
-Run your test suite using the command:
+* Create a robust testing suite using TDD
+* Utilize Lighthouse and WAVE for accessibility
+* Make network requests to API endpoints to retrieve and manipulate data
+* Implement error handling 
+* Implement third party packages
 
-```bash
-npm test
-```
 
-The test results will output to the terminal.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
----
+## Technologies
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Mocha](https://img.shields.io/badge/-mocha-%238D6748?style=for-the-badge&logo=mocha&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-## Linting Your Code
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
+<!-- GETTING STARTED -->
+# Getting Started
+You can find the project [here](https://github.com/emilyjmiles/travel-tracker.git) and follow the instructions below to get started.
+  
 
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory.
+### Installation
+1. Clone the repo
+   ```sh
+   git clone git@github.com:emilyjmiles/travel-tracker.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   npm start
+   ``` 
+3. Enter the following url in your browser: http://localhost:8080/
+4. Explore the website.
 
-## Webpack?
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-If you look in the `package.json` file, you'll see one of the library dependencies called `webpack`. If you're interested in learning more about what Webpack is and how it works behind the scenes, take a look through the [Webpack configuration documentation](https://webpack.js.org/concepts/).
+<!-- USAGE EXAMPLES -->
+## Usage
+* The program displays user's travel data through text and images and allows them to submit a new travel request.
 
-## Deploying to GitHub Pages
+New feature ideas: 
+- [] Make mobile responsive
 
-_If you are finished with the functionality and testing of your project_, then you can consider deploying your project to the web! This way anyone can play it without cloning down your repo.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[GitHub Pages](https://pages.github.com/) is a great way to deploy your project to the web. Don't worry about this until your project is free of bugs and well tested!
+## Testing
+We utilized TDD to create our project using [Mocha](https://mochajs.org/) & [Chai](https://www.chaijs.com/).
 
-If you _are_ done, you can follow [this procedure](./gh-pages-procedure.md) to get your project live on GitHub Pages.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+[![Contributors][contributors-shield]][contributors-url]
+
+Emily Miles - [LinkedIn](https://www.linkedin.com/in/emilyjmiles/) - ms.emily.j.miles@gmail.com
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+The following resources helped us build this project:
+
+[![MDN Docs][MDN-shield]][MDN]
+[![Turing School](https://img.shields.io/badge/Turing_School-030303?style=for-the-badge)](https://turing.edu/)
+[![Chai Assertion Library](https://img.shields.io/badge/chai-A30701?style=for-the-badge&logo=chai&logoColor=white)](https://www.chaijs.com/api/bdd/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Reflections
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[MDN-shield]: https://img.shields.io/badge/MDN_Web_Docs-black?style=for-the-badge&logo=mdnwebdocs&logoColor=white
+[MDN]:https://developer.mozilla.org/en-US/
+[contributors-shield]: https://img.shields.io/badge/Contributors-1-2ea44f?style=for-the-badge
+[contributors-url]: https://github.com/emilyjmiles/fitlit-group-project/graphs/contributors
+
+[product-screenshot]: images/screenshot.png
